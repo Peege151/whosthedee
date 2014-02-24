@@ -1,113 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+<title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "sample app", '#', id: "logo" %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Home",    '#' %></li>
-              <li><%= link_to "Help",    '#' %></li>
-              <li><%= link_to "Sign in", '#' %></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <div class="container">
-      <%= yield %>
-    </div>
-<footer class="site-footer">
-  I'm the Sticky Footer.
-</footer>
-</div>
-</body>
+    <%= yield %>
+  </body>
 </html>
-
-<!-- </html>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Whosthedee</title>
-  <%= csrf_meta_tags %>
-         <link rel="stylesheet" href="../assets/application.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/flexisel.css" type="text/css" />
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="../assets/jquery-1.10.2.min.js"></script>
-        <script type="text/javascript" src="../assets/jquery.flexisel.js"></script>	
-		<script type="text/javascript">
-							             $(window).load(function() {
-							  $("#flexiselDemo3").flexisel({
-							    visibleItems: 4,
-							    animationSpeed: 200,
-							    autoPlay: true,
-							    autoPlaySpeed: 3000,
-							    pauseOnHover: true,
-							//	clone:false,
-							    enableResponsiveBreakpoints: true,
-							    responsiveBreakpoints: {
-							      portrait: {
-							        changePoint:480,
-							        visibleItems: 1
-							      }, 
-							      landscape: {
-							        changePoint:640,
-							        visibleItems: 2
-							      },
-							      tablet: {
-							        changePoint:768,
-							        visibleItems: 3
-							      }
-							    }
-							  });
-							});
-        </script>
-</head>
-   <body>
-   	<% flash.each do |name| %>
-   		<% end %>
-        	<div id="lista1" class="nbs-flexisel-container">
-			<div class="nbs-flexisel-inner">
-					<ul id="flexiselDemo3" class="nbs-flexisel-ul">
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/calculator.png" alt="calculator" title="calculator" />calculator </li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/light_bulb.png" alt="light bulb" title="light bulb" />light bulb</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/card.png" alt="card" title="card" />card</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/chess.png" alt="chess" title="chess" />chess</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/clock.png" alt="alarm clock" title="alarm clock" />alarm clock</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/cut.png" alt="scissors" title="scissors" />scissors</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/heart.png" alt="heart" title="heart" />heart</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/map.png" alt="pin" title="pin" />pin</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/mobile_phone.png" alt="mobile phone" title="mobile phone" />mobile phone</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/camera.png" alt="camera" title="camera" />camera</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/music_note.png" alt="music note" title="music note" />music note</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/protection.png" alt="umbrella" title="umbrella" />umbrella</li>
-						<li class="nbs-flexisel-item"><img src="../assets/als-images/television.png" alt="television" title="television" />television</li>
-					</ul>
-				</div>
-
-                <div id="headernav">
-                </div>    
-
-                <div id="sidebarl">
-
-                </div>
-                   <div id="flash_notice">
-
-                <div id="maincontent">
-                </div>
-                <div id="sidebarr">
-                </div>
-            </div>
-        </div>
-
-    </body>
-<%= yield %>
-
-</html> -->
