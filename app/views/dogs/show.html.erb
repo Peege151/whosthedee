@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dog.name %>
+</p>
+
+<p>
+  <strong>Nick:</strong>
+  <%= @dog.nick %>
+</p>
+
+<p>
+  <strong>Primarybreed:</strong>
+  <%= @dog.primarybreed %>
+</p>
+
+<p>
+  <strong>Secondarybreed:</strong>
+  <%= @dog.secondarybreed %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @dog.neighborhood %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @dog.age %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @dog.weight %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @dog.picture %>
+</p>
+
+<%= link_to 'Edit', edit_dog_path(@dog) %> |
+<%= link_to 'Back', dogs_path %>

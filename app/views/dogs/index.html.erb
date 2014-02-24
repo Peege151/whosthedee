@@ -1,0 +1,44 @@
+<div id="dogswrap">
+
+<h1>Listing dogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Nick</th>
+      <th>Primarybreed</th>
+      <th>Secondarybreed</th>
+      <th>Neighborhood</th>
+      <th>Age</th>
+      <th>Weight</th>
+      <th>Picture</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dogs.each do |dog| %>
+      <tr>
+        <td><%= dog.name %></td>
+        <td><%= dog.nick %></td>
+        <td><%= dog.primarybreed %></td>
+        <td><%= dog.secondarybreed %></td>
+        <td><%= dog.neighborhood %></td>
+        <td><%= dog.age %></td>
+        <td><%= dog.weight %></td>
+        <td><%= dog.picture %></td>
+        <td><%= link_to 'Show', dog %></td>
+        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
+        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dog', new_dog_path %>
+</div>

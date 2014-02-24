@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nick: MyString
+  primarybreed: MyString
+  secondarybreed: MyString
+  neighborhood: MyString
+  age: 1
+  weight: 1
+  picture: MyString
+
+two:
+  name: MyString
+  nick: MyString
+  primarybreed: MyString
+  secondarybreed: MyString
+  neighborhood: MyString
+  age: 1
+  weight: 1
+  picture: MyString
