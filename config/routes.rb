@@ -7,7 +7,7 @@ Whosthedee2::Application.routes.draw do
   match '/signup',  to: 'users#new', via: 'get'
 
   
-
+  resources :users
   resources :dogs
 end
 
