@@ -40,6 +40,7 @@ group :doc do
 end
 group :production do
   gem 'pg', '0.12.2'
+  gem 'rails_l2factor'
 end
 
 # Use ActiveModel has_secure_password
