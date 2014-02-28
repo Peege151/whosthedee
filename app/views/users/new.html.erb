@@ -1,4 +1,26 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title,'Sign up') %>
 <h1>Sign up</h1>
-<%= render 'form' %>
-<%= link_to 'Back', dogs_path %>
+<div class="row">
+  <div class="span6 offset3">
+    <div class="form-container">
+    <%= form_for(@user) do |f| %>
+          <%= render 'shared/error_messages' %>
+
+
+      <%= f.label :name %> <br>
+      <%= f.text_field :name %> <br>
+
+      <%= f.label :email %> <br>
+      <%= f.text_field :email %> <br>
+
+      <%= f.label :password %> <br>
+      <%= f.password_field :password %> <br>
+
+      <%= f.label :password_confirmation, "Confirmation" %> <br>
+      <%= f.password_field :password_confirmation %> <br>
+
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+  </div>
+</div>
