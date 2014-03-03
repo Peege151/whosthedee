@@ -4,7 +4,7 @@ $grayLight: #999;
 footer {
   margin-top: 45px;
   padding-top: 5px;
-color: $grayMediumLight;
+  color: $grayMediumLight;
   color: $grayLight;
   a {
     color: #555;
@@ -20,4 +20,8 @@ color: $grayMediumLight;
     list-style: none;
 
   }
+}
+.footnav {
+position:relative;
+bottom:15px;
 }

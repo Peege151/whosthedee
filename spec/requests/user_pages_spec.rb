@@ -11,7 +11,7 @@ describe "User pages" do
     it { should have_content(user.name) }
   end
 
-describe "signup" do
+  describe "signup" do
 
     before { visit signup_path }
 
