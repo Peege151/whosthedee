@@ -13,7 +13,6 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
   end
   def edit
-    @user = User.find(params[:id])
   end
   def create
     @user = User.new(user_params)
@@ -40,8 +39,11 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
     # Before filters
-    def signed_in_user
-      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+     def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
     end
     def correct_user
       @user = User.find(params[:id])
