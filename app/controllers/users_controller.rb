@@ -54,8 +54,8 @@ class UsersController < ApplicationController
     end
     def correct_user
       @user = User.find(params[:id])
-      flash[:notice] = "You Can Only Edit Your Own Information... You Tryin' to Hack Me Bro? We're Just a bunch of friendly Dees!"
-      flash[:success] = "IP Successfully Added to Suspect Hacker List (but not really)"
+      # flash[:notice] = "You Can Only Edit Your Own Information... You Tryin' to Hack Me Bro? We're Just a bunch of friendly Dees!"
+      # flash[:success] = "IP Successfully Added to Suspect Hacker List (but not really)"
       redirect_to(root_url) unless current_user?(@user)
     end
       def admin_user
