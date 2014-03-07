@@ -1,4 +1,15 @@
 @import "bootstrap";
+                          
+
+
+
+                                /* --------- Definitions -------*/
+ $grayLight: #999;
+
+$grayMediumLight: #eaeaea;
+
+
+
 /* sidebar */
 #pagewrap {
   background-color:#F8F8F8;
@@ -23,6 +34,19 @@ aside {
       letter-spacing: -1px;
       margin-bottom: 3px;
       margin-top: 0px;
+    }
+  }
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayMediumLight;
+    &:last-child {
+      border-bottom: 1px solid $grayMediumLight;
     }
   }
 }
