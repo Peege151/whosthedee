@@ -12,17 +12,23 @@ $grayMediumLight: #eaeaea;
   font-family: "Moon_Flower";
   src: url('Moon_Flower_Bold.ttf')
   }
-
+html {
+    height:100%;
+    background-image: url(<%= asset_path 'concretepawbg.JPG' %>);
+    background-position: center;
+    background-size:cover;
+}
+body {
+  background-color: transparent;
+}
 /* sidebar */
 #pagewrap {
   // background-image: url('grassandskybg.jpg');
     // background-image: url('labpuppybg.jpg');
-    background-image: url(<%= asset_path 'concretepawbg.JPG' %>);
-    background-position: center;
-    background-size:cover;
-    height:700px;
-
   }
+.usershow {
+  margin-left: 20px;
+}
 aside {
   section {
     padding: 10px 0;
