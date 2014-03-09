@@ -21,8 +21,8 @@ module Whosthedee2
     # config.i18n.default_locale = :de
     I18n.enforce_available_locales = true
     config.serve_static_assets = true
+    config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+    config.assets.compile = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-
-
   end
 end

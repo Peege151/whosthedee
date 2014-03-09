@@ -17,7 +17,7 @@ $grayMediumLight: #eaeaea;
 #pagewrap {
   // background-image: url('grassandskybg.jpg');
     // background-image: url('labpuppybg.jpg');
-    background-image: url('concretepawbg.JPG');
+    background-image: url(<%= asset_path 'concretepawbg.JPG' %>);
     background-position: center;
     background-size:cover;
     height:700px;
