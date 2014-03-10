@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 <% provide(:title, @user.name) %>
-<div class="usershow">
-<div class="row">
-    <section>
-      <h1>
+<div class="userwrap">
+  <div class="usershow">
+    <div class="row">
+      <section>
+        <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
-      </h1>
-    </section>
-</div>
+        </h1>
+      </section>
+    </div>
           <p>
             <%= image_tag @user.image.url(:medium) %>
           </p>
@@ -21,7 +22,12 @@
             <strong>Email:</strong>
             <%= @user.email %>
           </p>
-</div>
-
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>
+  <div class="userdogs">
+    <div class="newdogbutton">
+    </div>
+  </div>
+</div>
+

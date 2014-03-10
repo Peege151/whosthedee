@@ -2,10 +2,9 @@ Whosthedee2::Application.routes.draw do
   resources :users
   resources :dogs
   resources :sessions, only: [:new, :create, :destroy]
-
+  root to: 'static_pages#home'
 
   get "users/new"
-  root to: 'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
