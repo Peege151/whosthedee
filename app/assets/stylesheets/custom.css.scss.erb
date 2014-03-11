@@ -46,21 +46,34 @@ body {
 }
 .userdogs {
   margin-left: 30px;
-  margin-top:114px;
+  margin-top:115px;
   display:table;
   float:left;
   width:600px;
   height: 300px;
-  background-color: green;
   border-radius: 15px;
-
+}
+.userdog {
+  background-color: orange;
+}
+#nodogheader {
+position: absolute;
+left: 20%;
+right: 20%;
+top:65px;
 }
 .newdogbutton {
-      height:30px;
-      display:table-cell;
-      text-align:center;
-      vertical-align: middle;
-      margin: 0 auto;
+      height:100px;
+      width: 600px;
+      position:relative;
+      bottom:10px; left: 0;
+      h1 {text-align:left;}
+      img {
+        float: left;
+        
+        height: 60px;
+        width:60px;
+      }
 }
 aside {
   section {
@@ -116,7 +129,13 @@ input, textarea, select, .uneditable-input {
   } 
 }
 .row {margin:0
+
 }
+.rowflow {margin:0;
+  overflow:visible;
+  
+}
+
 
 #error_explanation {
   margin: 0 auto;

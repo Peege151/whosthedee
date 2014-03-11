@@ -1,0 +1,19 @@
+<%= form_for(dog) do |f| %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+    <%= f.label :nick %><br>
+    <%= f.text_field :nick %>
+    <%= f.label :primarybreed %><br>
+    <%= f.text_field :primarybreed %>
+    <%= f.label :secondarybreed %><br>
+    <%= f.text_field :secondarybreed %>
+    <%= f.label :neighborhood %><br>
+    <%= f.text_field :neighborhood %>
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+    <%= f.label :weight %><br>
+    <%= f.number_field :weight %>
+    <%= f.label :picture %><br>
+    <%= f.text_field :picture %>
+    <%= f.submit %>
+<% end %>

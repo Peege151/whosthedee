@@ -1,7 +1,7 @@
 <div id="dogswrap">
 <h1>Editing dog</h1>
 
-<%= render 'form' %>
+<%= render 'dogform', :dog => @dog %>
 
 <%= link_to 'Show', @dog %> |
 <%= link_to 'Back', dogs_path %>

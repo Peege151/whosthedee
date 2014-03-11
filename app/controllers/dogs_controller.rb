@@ -1,5 +1,5 @@
 class DogsController < ApplicationController
-  before_action :set_dog, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:create, :destroy]
 
   # GET /dogs
   # GET /dogs.json
@@ -10,6 +10,8 @@ class DogsController < ApplicationController
   # GET /dogs/1
   # GET /dogs/1.json
   def show
+        @dog = Dog.find(params[:id])
+
   end
 
   # GET /dogs/new
@@ -19,22 +21,20 @@ class DogsController < ApplicationController
 
   # GET /dogs/1/edit
   def edit
+      @dog = Dog.find(params[:id])
+
   end
 
   # POST /dogs
   # POST /dogs.json
   def create
-    @dog = Dog.new(dog_params)
-
-    respond_to do |format|
+    @dog = current_user.dogs.build(dog_params)
       if @dog.save
-        format.html { redirect_to @dog, notice: 'Dog was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @dog }
+        flash[:success] = "Dog Created! Good Work!"
+        redirect_to current_user
       else
-        format.html { render action: 'new' }
-        format.json { render json: @dog.errors, status: :unprocessable_entity }
+        render 'static_pages/home'
       end
-    end
   end
 
   # PATCH/PUT /dogs/1
@@ -54,7 +54,7 @@ class DogsController < ApplicationController
   # DELETE /dogs/1
   # DELETE /dogs/1.json
   def destroy
-    @dog.destroy
+    Dog.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to dogs_url }
       format.json { head :no_content }

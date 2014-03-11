@@ -2,11 +2,13 @@
 <% provide(:title, @user.name) %>
 <div class="userwrap">
   <div class="usershow">
-    <div class="row">
+    <div class="rowflow">
       <section>
         <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        (Pup User)
+
         </h1>
       </section>
     </div>
@@ -24,10 +26,38 @@
           </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-</div>
-  <div class="userdogs">
-    <div class="newdogbutton">
-    </div>
   </div>
+    <% if @user.dogs.any? == false %>
+  <div id="nodogheader">
+    <h2> You Don't Have Any Dees Yet!! <h2>
+  </div>
+  <% end %>
+
+      <div class="userdogs">
+        <% if @user.dogs.any? == false %>
+          <div class="newdogbutton">
+              <%= link_to image_tag("/images/greenadd.png"), new_dog_path %>
+              <h1> Add A New Dee!! </h1>
+          </div>
+          <% end %>
+          <div class="userdog">
+            <% @user.dogs.each do |dog| %>
+            <hr>
+            <p> <b> Dee Name: </b> <%= link_to dog.name, dog %> </p>
+            <p> <b> Dog Nick: </b> <%=  dog.nick %> </p>
+            <p> <b> Breed: </b> <%=  dog.primarybreed %> </p>
+            <p> <b> Secondary: </b> <%=  dog.secondarybreed %> </p>
+            <p> <b> Neighborhood:</b> <%=  dog.neighborhood %> </p>
+            <p> <b> Age: </b> <%=  dog.age %> </p>
+            <p> <b> Weight: </b> <%=  dog.weight %> </p>
+            <% end %> 
+          </div>
+          <hr>
+           <div class="newdogbutton">
+              <%= link_to image_tag("/images/greenadd.png"), new_dog_path %>
+              <h1> Add A New Dee!! </h1>
+      </div>
+
+ </div>
 </div>
 

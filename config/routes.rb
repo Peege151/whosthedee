@@ -1,11 +1,11 @@
 Whosthedee2::Application.routes.draw do
   resources :users
-  resources :dogs
+  resources :dogs  
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'static_pages#home'
-
+  match "/dogs", to: 'dogs#index' ,via: 'get'
+  match '/dogs/:id/edit', to: 'dogs#edit', via: 'get'
   get "users/new"
-  match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/help', to: 'static_pages#help', via: 'get'  
@@ -13,6 +13,7 @@ Whosthedee2::Application.routes.draw do
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/signup',  to: 'users#new', via: 'get'
 
+  
   
 
 end

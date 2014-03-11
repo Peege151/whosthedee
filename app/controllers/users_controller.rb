@@ -1,18 +1,19 @@
 class UsersController < ApplicationController
     before_action :signed_in_user, only: [:edit, :update]
     before_action :correct_user,   only: [:edit, :update]
-      before_action :admin_user,     only: :destroy
+    before_action :admin_user,     only: :destroy
 
 
 
   def new
-  	    @user = User.new
+  	 @user = User.new
   end
    def index
     @users = User.paginate(page: params[:page])
   end
   def show
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    @dog = Dog.new
   end
   def edit
   end
@@ -47,12 +48,7 @@ class UsersController < ApplicationController
                                    :password_confirmation, :image)
     end
     # Before filters
-     def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_url, notice: "Please sign in."
-      end
-    end
+     
     def correct_user
       @user = User.find(params[:id])
       # flash[:notice] = "You Can Only Edit Your Own Information... You Tryin' to Hack Me Bro? We're Just a bunch of friendly Dees!"
