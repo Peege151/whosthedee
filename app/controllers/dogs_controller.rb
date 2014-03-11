@@ -55,10 +55,7 @@ class DogsController < ApplicationController
   # DELETE /dogs/1.json
   def destroy
     Dog.find(params[:id]).destroy
-    respond_to do |format|
-      format.html { redirect_to dogs_url }
-      format.json { head :no_content }
-    end
+    redirect_to current_user
   end
 
   private
@@ -69,6 +66,6 @@ class DogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dog_params
-      params.require(:dog).permit(:name, :nick, :primarybreed, :secondarybreed, :neighborhood, :age, :weight, :picture)
+      params.require(:dog).permit(:name, :nick, :primarybreed, :secondarybreed, :neighborhood, :age, :weight, :image)
     end
 end
