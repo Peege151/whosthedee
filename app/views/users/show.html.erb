@@ -3,12 +3,8 @@
 <div class="userwrap">
 <div class="userbanner">
   <div id = "namecontainer">
-      <section>
-        <h1>
         <%= @user.name %>
-        </h1>
-      </section>
-    </div>
+  </div>
           <p>
             <%= image_tag @user.image.url(:thumb) %>
           </p>
@@ -28,8 +24,10 @@
             <strong>Email:</strong>
             <%= @user.email %>
           </p>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+            <%= link_to 'Edit', edit_user_path(@user) %> |
+            <%= link_to 'Back', users_path %>
+  </div>
+  <div id="abovedees">
   </div>
         <div class="userdogs">
         <% if @user.dogs.any? == false %>
@@ -40,19 +38,40 @@
           <% end %>
             <% @user.dogs.each do |dog| %>
             <div class="userdog">
-            <hr>
-            <table>
+              <div class="userdogpic">
              <%= image_tag @dog.image.url(:medium) %> 
-            <p> <b> <tr> Dee Name: </tr></b> <%= link_to dog.name, dog %> </p>
-            <p> <b> <tr> Dog Nick: </tr></b> <%=  dog.nick %> </p>
-            <p> <b> <tr> Breed: </tr></b> <%=  dog.primarybreed %> </p>
-            <p> <b> <tr> Secondary: </tr></b> <%=  dog.secondarybreed %> </p>
-            <p> <b> <tr> Neighborhood:</tr></b> <%=  dog.neighborhood %> </p>
+              </div>
+              <div class="dogtable">
+                  <tr class ="odd"> 
+                      <td class ="label"> Dee Name:  </td>
+                      <td class ="response"> <%= link_to dog.name, dog %> </td>
+                  </tr>
+                  <tr class ="even"> 
+                      <td class ="label"> Dee Nick:  </td>
+                      <td class ="response"> <%= dog.nick %> </td>
+                  </tr>
+                  <tr class ="odd"> 
+                      <td class ="label"> Dee Breed:  </td>
+                      <td class ="response"> <%= dog.primarybreed %> </td>
+                  </tr>
+                  <tr class ="even"> 
+                      <td class ="label"> Secondary Breed:  </td>
+                      <td class ="response"> <%= dog.secondarybreed  %> </td>
+                  </tr>
+                  <tr class ="odd"> 
+                      <td class ="label"> Dee Age:  </td>
+                      <td class ="response"> <%= dog.age %> Years Old! </td>
+                  </tr>
+                  <tr class ="even"> 
+                      <td class ="label"> Dog Weight:  </td>
+                      <td class ="response"> <%= dog.weight  %> El Bees </td>
+                  </tr>
+          
             <p> <b> Age: </b> <%=  dog.age %> </p>
             <p> <b> Weight: </b> <%=  dog.weight %> </p>
             <%= link_to 'Delete Dee', dog, method: :delete, data: { confirm: 'Are You Sure You Want To Delete This Dee!?' } %>
             <td><%= link_to 'Change Dee Info', edit_dog_path(dog) %></td>
-           </table>
+             </div>
              </div>
             <% end %> 
           <hr>
