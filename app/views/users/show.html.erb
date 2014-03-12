@@ -6,15 +6,21 @@
         <%= @user.name %>
   </div>
           <p>
+                      <div class="bannerimagecontainer">
+
             <%= image_tag @user.image.url(:thumb) %>
+          </div>
           </p>
           <p>
         <section>
         <h3>
+          <div class="banneravatarcontainer">
         <%= gravatar_for @user %>
+      </div>
         <%= @user.name %>
         (Pup User)
         </h3>
+
       </section>
             <strong>Name:</strong>
             <%= @user.name %>
@@ -42,6 +48,7 @@
              <%= image_tag @dog.image.url(:medium) %> 
               </div>
               <div class="dogtable">
+                <table>
                   <tr class ="odd"> 
                       <td class ="label"> Dee Name:  </td>
                       <td class ="response"> <%= link_to dog.name, dog %> </td>
@@ -66,9 +73,20 @@
                       <td class ="label"> Dog Weight:  </td>
                       <td class ="response"> <%= dog.weight  %> El Bees </td>
                   </tr>
+                  <tr class ="odd"> 
+                      <td class ="label"> Dee ID:  </td>
+                      <td class ="response"> <%= dog.id %> Years Old! </td>
+                  </tr>
+                  <tr class ="even"> 
+                      <td class ="label"> Dog URL:  </td>
+                      <td class ="response"> <%= dog.image.url  %> El Bees </td>
+                  </tr>
+                  <tr>
+                    <td> check </td> <td> </td>
+                  </tr>
+                </table>
           
-            <p> <b> Age: </b> <%=  dog.age %> </p>
-            <p> <b> Weight: </b> <%=  dog.weight %> </p>
+
             <%= link_to 'Delete Dee', dog, method: :delete, data: { confirm: 'Are You Sure You Want To Delete This Dee!?' } %>
             <td><%= link_to 'Change Dee Info', edit_dog_path(dog) %></td>
              </div>
