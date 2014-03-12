@@ -1,21 +1,25 @@
 <p id="notice"><%= notice %></p>
 <% provide(:title, @user.name) %>
 <div class="userwrap">
-  <div class="usershow">
-    <div class="rowflow">
+<div class="userbanner">
+  <div id = "namecontainer">
       <section>
         <h1>
-        <%= gravatar_for @user %>
         <%= @user.name %>
-        (Pup User)
-
         </h1>
       </section>
     </div>
           <p>
-            <%= image_tag @user.image.url(:medium) %>
+            <%= image_tag @user.image.url(:thumb) %>
           </p>
           <p>
+        <section>
+        <h3>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+        (Pup User)
+        </h3>
+      </section>
             <strong>Name:</strong>
             <%= @user.name %>
           </p>
@@ -27,13 +31,7 @@
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
   </div>
-    <% if @user.dogs.any? == false %>
-  <div id="nodogheader">
-    <h2> You Don't Have Any Dees Yet!! <h2>
-  </div>
-  <% end %>
-
-      <div class="userdogs">
+        <div class="userdogs">
         <% if @user.dogs.any? == false %>
           <div class="newdogbutton">
               <%= link_to image_tag("/images/greenadd.png"), new_dog_path %>
@@ -64,6 +62,14 @@
               <h1> Add A New Dee!! </h1>
             <% end %>
       </div>
+    </div>
+    <% if @user.dogs.any? == false %>
+  <div id="nodogheader">
+    <h2> You Don't Have Any Dees Yet!! <h2>
+  </div>
+  <% end %>
+
+
 
  </div>
 </div>
