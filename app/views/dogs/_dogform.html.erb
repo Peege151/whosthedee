@@ -1,3 +1,5 @@
+<div class="form-container">
+
 <%= form_for(@dog) do |f| %>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -15,4 +17,6 @@
     <%= f.number_field :weight %>
     <%= f.label :image %><br>
     <%= f.file_field :image %>    <%= f.submit %>
+<%= link_to 'Back', dogs_path %>
 <% end %>
+</div>

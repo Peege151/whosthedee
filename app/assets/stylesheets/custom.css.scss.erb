@@ -27,18 +27,25 @@ body {
   // background-image: url('grassandskybg.jpg');
     // background-image: url('labpuppybg.jpg');
     margin-left:10%;
-    margin:right 10%;
+    margin-right: 10%;
   }
   #namecontainer {
     width:250px;
     height:80px;
+    font-family: "Moon_Flower";
+    src: url('Moon_Flower_Bold.ttf');
+    font-size:500%;
+    span {
+    position:relative;
+    top:30px;
   }
+}
   #abovedees {
     height: 80px;
     float:left;
     width: 800px;
   }
-  .userwrap {
+  .usershowwrap {
  height:510px;
  width:100%;
  float:left
@@ -60,18 +67,33 @@ body {
     border: 3px solid orange;
       } h1 ,{
         text-align: left;
-      }
+      } h1, h2, h3 {margin-top:5px;}
 }
 .userdogs {
   display:table;
   float:left;
-  width:600px;
-  height: 300px;
+  width:880px;
+  height: 310px;
   border-radius: 15px;
+}
+.userdogcontrols {
+  width:120px;
+  height:74px;
+  margin-left:20px;
+  float:left;
+  position:relative;
+  top:3px;
+  border-radius:10px;
+   -webkit-box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
+-moz-box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
+box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
+  a   {width: 120px;
+
+      height:37px;}
 }
 .userdog {
   height:310px;
-  width: 800px;
+  width: 880px;
   img {
     float:left;
   } tr {
@@ -84,10 +106,34 @@ body {
 box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
 }
  .banneravatarcontainer {width:100px; 
+  float:left;
   -webkit-box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
 -moz-box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
 box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
 }
+.userstatus {
+  float:left;
+  height:85px;
+  width:120px;
+  vertical-align: middle;
+      font-family: "Moon_Flower";
+    src: url('Moon_Flower_Bold.ttf');
+    font-size:300%;
+    span {
+      position:relative;top:30px;
+    }
+}
+.userbuttons{
+  width: 150px;
+  height: 100px;
+  border-radius:10px;
+    -webkit-box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
+    box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
+      a {
+        width:150px;
+      }
+    }
 #nodogheader {
 position: absolute;
 left: 20%;
