@@ -4,6 +4,13 @@
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag    "application", media: "all" %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "jquery.rails.js" %>
+    <%= javascript_include_tag "jquery.flexisel" %>
+    <script>
+      $(window).load(function() {
+      $("#slider").flexisel();
+      });
+    </script>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
