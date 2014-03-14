@@ -38,7 +38,9 @@
             <% @user.dogs.each do |dog| %>
             <div class="userdog">
               <div class="userdogpic">
-             <%= image_tag @dog.image.url(:medium) %> 
+                
+             <%= image_tag dog.image.url(:medium) %>
+             <!-- <%= image_tag @dog.image.url(:medium) %> -->
               </div>
               <div class="dogtable">
                 <table>
@@ -72,7 +74,7 @@
                   </tr>
                   <tr class ="even"> 
                       <td class ="label"> Dog URL:  </td>
-                      <td class ="response"> <%= dog.image.url  %> El Bees </td>
+                      <td class ="response"> <%= dog.image.url  %>  </td>
                   </tr>
                   <tr>
                     <td> check </td> <td> </td>

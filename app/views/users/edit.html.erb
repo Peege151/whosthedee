@@ -21,9 +21,10 @@
     
         <%= f.label :city %>
         <%= f.text_field :city %>
-
-        <%= f.file_field :avatar %>
-
+        <%= f.label :image %>
+         <%= f.file_field :image %>
+<!--         <%= f.file_field :avatar %>
+ -->
 
         <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
       <% end %>
