@@ -1,0 +1,31 @@
+
+<%= render 'layouts/slider' %>
+<div id="pagewrap">
+<% if signed_in? == false %>
+<div class="homestatic">
+	<div class="homeline">
+  		<h1 style="position:relative;top:20px;">Hai, Welcome To</h1>
+	</div>
+	<div class="homeline">
+  		<img src="/images/whosthedeecompact.png" />
+  	</div>
+  	<div class="homeline">
+  		<h2 style="color:black;">
+    		The Place On The Internet For Dogs and Their Owners!
+  		</h2>
+  	</div>
+<div id="signupbutton">
+  <%= link_to "Sign Up!", signup_path, class: "btn btn-large btn-primary" %> <br>
+ </div>
+  <br>
+  <br>
+  <!-- <%= image_tag("/images/happydog2.png") %> -->
+    <span> <%= image_tag("/images/happydog.png") %> </span>
+  <!-- <%= image_tag("/images/happydog2.png") %> -->
+
+</div>
+<% else %>
+
+<% end%>
+</div>
+

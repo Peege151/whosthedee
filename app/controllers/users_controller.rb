@@ -4,6 +4,8 @@ class UsersController < ApplicationController
     before_action :admin_user,     only: :destroy
 
 
+def home
+end
 
   def new
   	 @user = User.new

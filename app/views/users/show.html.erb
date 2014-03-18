@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 <% provide(:title, @user.name) %>
+<div id="pagewrap">
 <div class="usershowwrap">
 <div class="userbanner">
   <div id = "namecontainer">
@@ -25,8 +26,6 @@
             <a href="#" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-envelope"></span> Message User</a>
             <a href="#" class="btn btn-default btn-danger"><span class="glyphicon glyphicon-flag"></span> Report User</a>
         </div>
-  </div>
-  <div id="abovedees">
   </div>
         <div class="userdogs">
         <% if @user.dogs.any? == false %>
@@ -105,6 +104,6 @@
 
 
 
- </div>
+    </div>
+  </div>
 </div>
-

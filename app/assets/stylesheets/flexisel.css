@@ -1,12 +1,10 @@
-.clearout {
-height:20px;
-clear:both;
-}
-
-#flexiselDemo1, #flexiselDemo2, #flexiselDemo3 {
-display:none;
-}
-
+#flexiselcontainer ul {
+    height:200px;
+    width:100% !important;
+    overflow:auto;
+    display:inline-block;    } 
+        li { display:inline-block;
+    }
 .nbs-flexisel-container {
     position:relative;
     max-width:100%;
@@ -23,15 +21,7 @@ display:none;
 .nbs-flexisel-inner {
     overflow:hidden;
     float:left;
-    width:100%;
-    background:#fcfcfc;
-    background: #fcfcfc -moz-linear-gradient(top, #fcfcfc 0%, #eee 100%); /* FF3.6+ */
-    background: #fcfcfc -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fcfcfc), color-stop(100%,#eee)); /* Chrome,Safari4+ */
-    background: #fcfcfc -webkit-linear-gradient(top, #fcfcfc 0%, #eee 100%); /* Chrome10+,Safari5.1+ */
-    background: #fcfcfc -o-linear-gradient(top, #fcfcfc 0%, #eee 100%); /* Opera11.10+ */
-    background: #fcfcfc -ms-linear-gradient(top, #fcfcfc 0%, #eee 100%); /* IE10+ */
-    background: #fcfcfc linear-gradient(top, #fcfcfc 0%, #eee 100%); /* W3C */
-    border:1px solid #ccc;
+    width:100%;   
     border-radius:5px;
     -moz-border-radius:5px;
     -webkit-border-radius:5px;  
@@ -44,6 +34,8 @@ display:none;
     cursor:pointer;
     position:relative;
     line-height:0px;
+    white-space: nowrap;
+    display:inline-block;
 }
 .nbs-flexisel-item img {
     width: 100%;
@@ -51,10 +43,17 @@ display:none;
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
-    max-width:100px;
-    max-height:45px;
+    max-width:188px;
+    max-height:188px;
+     white-space: nowrap;
+    display:inline;
+
 }
 
+ul#slider.nbs-flexisel-ul {
+    height:200px;
+    width:100% !important;
+}
 /*** Navigation ***/
 
 .nbs-flexisel-nav-left,

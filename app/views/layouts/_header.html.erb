@@ -1,31 +1,24 @@
-<head>
 
-
-
-
-</head>
 <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
     <div class="container2">
-
-      <% if signed_in? %>
       <div id="logowrap">
               <%= link_to image_tag("/images/doghouse.png"), root_path %>
+      </div>       
+      <% if signed_in? %>
 
-      </div>
       <div id="searchcontainer">
-      <div id="search">
-      <%= form_tag("/shirts", method: "get") do %>
-      <%= text_field_tag(:q) %>
+        <div id="search">
+        <%= form_tag("/shirts", method: "get") do %>
+        <%= text_field_tag(:q) %>
+        </div>
+        <div class="searchsubmit">
+        <%= submit_tag("Search") %>
+        </div>
       </div>
-       <div class="searchsubmit">
-       <%= submit_tag("Search") %>
-      </div>
-       </div>
-    <% end %>
-    <% end %>
-      <nav>
-        <ul class="patnav">
+      <% end %>
+      <% end %>
+        <div id="patnav">
+          <ul>
           <% if signed_in? %>
             <li><%= link_to "Users", users_path %></li>
             <li id="fat-menu" class="dropdown">
@@ -42,20 +35,11 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+          <ul>
+            <li><%= link_to "Sign In", signin_path %></li>
+            <li> <%= link_to "| Sign Up", signup_path %> </li>
           <% end %>
         </ul>
-      </nav>
+      </div>
     </div>
-    </div>
-  </div>
 </header>
-<!-- <div id="flexiselcontainer">
-  <ul id="slider">
-    <li><%= link_to image_tag('/images/headerimage1.png')%></li>
-    <li><%= link_to image_tag('/images/headerimage2.png')%></li>
-    <li><%= link_to image_tag('/images/headerimage3.png')%></li>
-    <li><%= link_to image_tag('/images/headerimage4.png')%></li>
-    <li><%= link_to image_tag('/images/headerimage5.png')%></li>
-  </ul>
-</div> -->
