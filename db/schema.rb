@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140313061512) do
+ActiveRecord::Schema.define(version: 20140320204318) do
 
   create_table "conversations", force: true do |t|
     t.string   "subject",    default: ""
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20140313061512) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "city"
+    t.string   "neighborhood"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

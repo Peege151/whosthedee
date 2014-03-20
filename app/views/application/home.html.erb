@@ -4,28 +4,55 @@
 <% if signed_in? == false %>
 <div class="homestatic">
 	<div class="homeline">
-  		<h1 style="position:relative;top:20px;">Hai, Welcome To</h1>
+  		<h1 style="position:relative;top:20px;">Welcome To</h1>
 	</div>
-	<div class="homeline">
+	  <div class="logoline">
   		<img src="/images/whosthedeecompact.png" />
   	</div>
-  	<div class="homeline">
+  	<div class="slogan">
   		<h2 style="color:black;">
     		The Place On The Internet For Dogs and Their Owners!
   		</h2>
   	</div>
-<div id="signupbutton">
-  <%= link_to "Sign Up!", signup_path, class: "btn btn-large btn-primary" %> <br>
- </div>
-  <br>
-  <br>
+    <div id="signupbutton">
+      <%= link_to "Sign Up!", signup_path, class: "btn btn-large btn-primary" %> 
+    </div>
   <!-- <%= image_tag("/images/happydog2.png") %> -->
     <span> <%= image_tag("/images/happydog.png") %> </span>
   <!-- <%= image_tag("/images/happydog2.png") %> -->
-
 </div>
 <% else %>
+<div class="usershowwrap">
+<div class="userbanner">
+  <div id = "namecontainer">
+       <span> <%= @user.name %> </span>
+  </div>
+        <div class="bannerimagecontainer">
+           <%= image_tag @user.image.url(:thumb) %> 
+        </div>
+            <%= link_to 'Edit', edit_user_path(@user) %> |
+          <h3> City: </h3>
+          <h3> <%= @user.city %></h3>
 
+          <h3> User Status: </h3>
+          <div class="banneravatarcontainer">
+             <%= gravatar_for @user %>
+          </div>
+        <div class="userstatus"> <span> Pup  </span> </div>
+            <strong>Email:</strong>
+            <h3> <%= @user.email %> </h3><br>
+            <%= link_to 'Back', root_path %>
+        <div class="userbuttons">
+            <a href="#" class="btn btn-default btn-success"><span class="glyphicon glyphicon-plus"></span> Add Friend</a>
+            <a href="#" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-envelope"></span> Message User</a>
+            <a href="#" class="btn btn-default btn-danger"><span class="glyphicon glyphicon-flag"></span> Report User</a>
+        </div>
+  </div>
+
+<div id="matches">
+  <h1> <%= image_tag("/images/greenadd.png")%>New Doggy Playdate!</h1>
+</div>
 <% end%>
+</div>
 </div>
 

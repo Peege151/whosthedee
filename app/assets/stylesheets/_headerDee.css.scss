@@ -35,7 +35,11 @@
 }
 ul .dropdown-menu {
 }
+
  li {display:inline;}
+  .dropdown-menu {
+    height:120px;
+  }
 
 #searchcontainer {
   width:350px;
@@ -61,8 +65,4 @@ overflow:visible;
 float:left;
 input {border-radius: 0px 10px 10px 0px;
 background-color:#ffc18f;}
-}
-#flexiselcontainer {
-height:200px;
-width:100%;
 }
