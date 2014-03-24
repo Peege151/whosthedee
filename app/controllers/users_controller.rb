@@ -47,7 +47,7 @@ end
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :image, :city)
+                                   :password_confirmation, :image, :city, :neighborhood)
     end
     # Before filters
      

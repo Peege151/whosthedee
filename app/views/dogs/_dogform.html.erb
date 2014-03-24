@@ -9,7 +9,8 @@
     <%= f.select :primarybreed, 
     # A A A A A A  A A   A  A A A A A A A A A A A A  A A A A A A A A A A A A A A A  A
         [
-
+        ['Select A Primary Breed', 'select_breed'],
+        ['Mutt - No Idea', 'mutt_no_idea'],
         ['Affenpinscher','affenpincher'],
         ['Afghan Hound','afgan_hound'],
         ['Airedale Terrier','airedale_terrier'],
@@ -192,8 +193,10 @@
     <%= f.label :secondarybreed %><br>
     <%= f.select :secondarybreed,
         [
+        ['Select A Secondary Breed', 'select_secondary_breed'],            
         ['Purebred', 'purebred'],
-        ['Affenpinscher','affenpincher'],
+        ['Mutt - No Idea', 'mutt_no_idea'],
+        ['Affenpinscher','affenpinscher'],
         ['Afghan Hound','afgan_hound'],
         ['Airedale Terrier','airedale_terrier'],
         ['Akita','akita'],
@@ -378,7 +381,10 @@
     <%= f.number_field :age %>
     <%= f.label :weight %><br>
     <%= f.select :weight,
-        [['5-10lb','5-10'],
+
+        [
+        ['Select Weight','select_weight'],
+        ['5-10lb','5-10'],
         ['10-15lb','10-15'],
         ['15-20','15-20'],
         ['20-25','20-25'],

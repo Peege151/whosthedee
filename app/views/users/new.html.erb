@@ -16,11 +16,26 @@
       <%= f.label :password %> <br>
       <%= f.password_field :password %> <br>
 
-      <%= f.label :password_confirmation, "Confirmation" %> <br>
+      <%= f.label :password_confirmation, "Confirm Password" %> <br>
       <%= f.password_field :password_confirmation %> <br>
         <div class="field">
     <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.select :city,
+          [
+          ['New York City', 'nyc'],
+          ['Los Angeles', 'la'],
+          ['Boston', 'bean']
+          ] 
+          %>
+</div>
+        <div id="neighbselect">
+        <%= f.label :neighborhood %><br>
+        <%= f.select :neighborhood,
+        [
+        ['Williamsburg', 'williamsburg'],
+        ['Park Slope', 'parkslope']  
+        ]
+         %>
   </div>
 
       <%= f.file_field :image %>
