@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324162218) do
+ActiveRecord::Schema.define(version: 20140324165310) do
+
+  create_table "burroughs", force: true do |t|
+    t.string   "name"
+    t.integer  "city_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "burroughs", ["city_id"], name: "index_burroughs_on_city_id"
 
   create_table "cities", force: true do |t|
     t.datetime "created_at"
@@ -46,6 +55,16 @@ ActiveRecord::Schema.define(version: 20140324162218) do
     t.integer  "dogpic_file_size"
     t.datetime "dogpic_updated_at"
   end
+
+  create_table "hoods", force: true do |t|
+    t.string   "name"
+    t.integer  "burrough_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "city_id"
+  end
+
+  add_index "hoods", ["burrough_id"], name: "index_hoods_on_burrough_id"
 
   create_table "notifications", force: true do |t|
     t.string   "type"
