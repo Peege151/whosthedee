@@ -6,9 +6,7 @@ gem 'rails', '4.0.2'
 gem 'bootstrap-sass', '~>3.1.1.0'
 gem 'bcrypt-ruby'
 gem 'mailboxer'
-
-
- gem 'faker', '1.1.2'
+gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
@@ -40,6 +38,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'amistad'
 gem 'jbuilder', '~> 1.2'
 group :test do
   gem 'capybara', '1.1.0'

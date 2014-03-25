@@ -16,8 +16,20 @@
       <%= f.label :password %> <br>
       <%= f.password_field :password %> <br>
 
-      <%= f.label :password_confirmation, "Confirmation" %> <br>
+      <%= f.label :password_confirmation, "Confirm Password" %> <br>
       <%= f.password_field :password_confirmation %> <br>
+        <div class="field">
+    <%= f.label :city_id %><br>
+    <%= f.collection_select :city_id, City.order(:id), :id, :name, include_blank: true %>
+        </div>
+        <div id="neighbselect">
+        <%= f.label :burrough_id %><br>
+        <%= f.grouped_collection_select :burrough_id, City.order(:name), :burroughs, :name, :id, :name, include_blank: true %>
+        </div>
+        <div id="neighbselect">
+        <%= f.label :hood_id %><br>
+        <%= f.grouped_collection_select :hood_id, Burrough.order(:name), :hoods, :name,  :id, :name, include_blank: true %>
+        </div>
 
       <%= f.file_field :image %>
 

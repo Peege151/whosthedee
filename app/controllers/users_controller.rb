@@ -4,6 +4,20 @@ class UsersController < ApplicationController
     before_action :admin_user,     only: :destroy
 
 
+def home
+end
+  
+  def cities
+    @cities = City.all
+  end
+
+  def hoods
+    @hoods = Hood.all
+  end
+
+  def burroughs
+    @burroughs =  Burrough.all  
+  end
 
   def new
   	 @user = User.new
@@ -21,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-     flash[:success] = "Welcome to Whosthedee?!"
+      flash[:success] = "Welcome to Whosthedee?!"
       redirect_to @user
     else
       render 'new'
@@ -45,7 +59,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :image)
+                                   :password_confirmation, :image, :city_id, :burrough_id, :hood_id)
     end
     # Before filters
      

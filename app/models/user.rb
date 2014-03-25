@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  include Amistad::FriendModel
+  belongs_to :burrough
+  belongs_to :city
+  belongs_to :hood
   has_many :dogs, dependent: :destroy
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50 }
@@ -8,8 +12,9 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "150x150>" }, :default_url => "/images/empty-user.png"
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "150x150#" }, :default_url => "/images/empty-user.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  acts_as_messageable
 
 
  def User.new_remember_token

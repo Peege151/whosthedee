@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong>Owner:</strong>
+  <%= @dog.user.name %>
+</p>
 <p>
   <strong>Name:</strong>
   <%= @dog.name %>
@@ -38,6 +41,7 @@
 <p>
   <strong>Picture:</strong>
   <%= @dog.image %>
+
 </p>
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |

@@ -1,17 +1,34 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "sample app", root_path, id: "logo" %>
-      <nav>
-        <ul class="patnav">
 
+<header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container2">
+      <div id="logowrap">
+              <%= link_to image_tag("/images/doghouse.png"), root_path %>   
+      <% if signed_in? %>
+           <%= link_to image_tag('/images/addafriendlogo.png', :size => "50x50"), requests_friends_path(id: @user.id) %>
+      <% end %>
+      </div>       
+      <% if signed_in? %>
+      <div id="searchcontainer">
+        <div id="search">
+        <%= form_tag("/users", method: "get") do %>
+        <%= text_field_tag(:q) %>
+        </div>
+        <div class="searchsubmit">
+        <%= submit_tag("Search") %>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+        <div id="patnav">
+          <ul>
           <% if signed_in? %>
-            <li><%= link_to "Users", users_path %></li>
-            <li id="fat-menu" class="dropdown">
+<!--             <li><%= link_to "Users", users_path %></li>
+ -->            <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
+                <%= current_user.name %> <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
+                <li><%= link_to "Home", root_path %></li>
                 <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
@@ -21,10 +38,11 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+          <ul>
+            <li><%= link_to "Sign In", signin_path %></li>
+            <li> <%= link_to "| Sign Up", signup_path %> </li>
           <% end %>
         </ul>
-      </nav>
+      </div>
     </div>
-  </div>
 </header>

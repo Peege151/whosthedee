@@ -40,6 +40,7 @@ class DogsController < ApplicationController
   # PATCH/PUT /dogs/1
   # PATCH/PUT /dogs/1.json
   def update
+    @dog = Dog.find(params[:id])
     respond_to do |format|
       if @dog.update(dog_params)
         format.html { redirect_to @dog, notice: 'Dog was successfully updated.' }

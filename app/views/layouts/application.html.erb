@@ -2,19 +2,31 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+        <%= stylesheet_link_tag "owl.carousel" %>
+                <%= stylesheet_link_tag "owl.theme" %>
     <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "owl.carousel" %>
+    <script>
+        $(document).ready(function() {
+        $("#slider").owlCarousel({ 
+         autoPlay: 3000, //Set AutoPlay to 3 seconds
+         items : 10,
+         pagination : false,
+ 
+  });
+ 
+});
+    </script>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
   <body>
      <%= render 'layouts/header' %>
-     <div id="pagewrap">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
-      <% end %>
+        <% end %>
          <%= yield %>
-       <%= render 'layouts/footer' %>
-    </div>
+           <%= render 'layouts/footer' %>
   </body>
 </html>

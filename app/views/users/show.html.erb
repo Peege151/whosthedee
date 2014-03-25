@@ -1,47 +1,63 @@
 <p id="notice"><%= notice %></p>
 <% provide(:title, @user.name) %>
-<div class="userwrap">
+<div id="pagewrap">
+  <div id="break">
+  </div>
+  <!--  -->
+<div class="usershowwrap">
 <div class="userbanner">
   <div id = "namecontainer">
-        <%= @user.name %>
+       <span> <%= @user.name %> </span>
   </div>
-          <p>
-            <%= image_tag @user.image.url(:thumb) %>
-          </p>
-          <p>
-        <section>
-        <h3>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-        (Pup User)
-        </h3>
-      </section>
-            <strong>Name:</strong>
-            <%= @user.name %>
-          </p>
-
-          <p>
-            <strong>Email:</strong>
-            <%= @user.email %>
-          </p>
+        <div class="bannerimagecontainer">
+           <%= image_tag @user.image.url(:thumb) %> 
+        </div>
             <%= link_to 'Edit', edit_user_path(@user) %> |
-            <%= link_to 'Back', users_path %>
-  </div>
-  <div id="abovedees">
+          <h3> <%= @user.city.name %></h3> <br>
+            <% if @user.burrough != nil %>
+                <h3> <%= @user.burrough.name %></h3> <br>
+            <% end %> 
+            <% if @user.hood != nil %>
+                <h3> <%= @user.hood.name %></h3> <br>
+            <% end %>
+
+         <!--  <h3> User Status: </h3>
+          <div class="banneravatarcontainer">
+             <%= gravatar_for @user %>
+          </div>
+        <div class="userstatus"> <span> Pup  </span> </div> -->
+            <strong>Email:</strong>
+            <h3> <%= @user.email %> </h3><br>
+            <%= link_to 'Back', root_path %>
+      <% if @user != current_user %>      
+        <div class="userbuttons">
+            <%= link_to 'Add Friend', friends_path(id: @user.id), :method =>"post", class: "btn btn-default btn-success" %>
+            <a href="#" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-envelope"></span> Message User</a>
+            <a href="#" class="btn btn-default btn-danger"><span class="glyphicon glyphicon-flag"></span> Report User</a>
+        </div>
+      <% end %>
   </div>
         <div class="userdogs">
-        <% if @user.dogs.any? == false %>
+        <% if @user == current_user %>
+          <% if @user.dogs.any? == false %>
           <div class="newdogbutton">
               <%= link_to image_tag("/images/greenadd.png"), new_dog_path %>
               <h1> Add A New Dee!! </h1>
           </div>
           <% end %>
+          <% elsif @user != current_user and @user.dogs.any? == false %>
+            <h1> This User Has No Dee's! </h1>
+
+          <% end %>
             <% @user.dogs.each do |dog| %>
             <div class="userdog">
               <div class="userdogpic">
-             <%= image_tag @dog.image.url(:medium) %> 
+                
+             <%= image_tag dog.image.url(:medium) %>
+             <!-- <%= image_tag @dog.image.url(:medium) %> -->
               </div>
               <div class="dogtable">
+                <table>
                   <tr class ="odd"> 
                       <td class ="label"> Dee Name:  </td>
                       <td class ="response"> <%= link_to dog.name, dog %> </td>
@@ -66,12 +82,25 @@
                       <td class ="label"> Dog Weight:  </td>
                       <td class ="response"> <%= dog.weight  %> El Bees </td>
                   </tr>
-          
-            <p> <b> Age: </b> <%=  dog.age %> </p>
-            <p> <b> Weight: </b> <%=  dog.weight %> </p>
-            <%= link_to 'Delete Dee', dog, method: :delete, data: { confirm: 'Are You Sure You Want To Delete This Dee!?' } %>
-            <td><%= link_to 'Change Dee Info', edit_dog_path(dog) %></td>
-             </div>
+                  <tr class ="odd"> 
+                      <td class ="label"> Dee ID:  </td>
+                      <td class ="response"> <%= dog.id %> Years Old! </td>
+                  </tr>
+                  <tr class ="even"> 
+                      <td class ="label"> Dog URL:  </td>
+                      <td class ="response"> <%= dog.image.url  %>  </td>
+                  </tr>
+                  <tr>
+                    <td> check </td> <td> </td>
+                  </tr>
+                </table>        
+              </div>
+              <% if @user == current_user %>
+              <div class="userdogcontrols">
+              <%= link_to 'Edit Dee', edit_dog_path(dog), class: "btn btn-default btn-warning" %> 
+             <%= link_to 'Delete Dee', dog, class: "btn btn-default btn-danger", method: :delete, data: { confirm: 'Are You Sure You Want To Delete This Dee?!'} %>
+              </div> 
+                <% end %>       
              </div>
             <% end %> 
           <hr>
@@ -82,14 +111,14 @@
             <% end %>
       </div>
     </div>
-    <% if @user.dogs.any? == false %>
-  <div id="nodogheader">
-    <h2> You Don't Have Any Dees Yet!! <h2>
-  </div>
+    <% if @user.dogs.any? == false and @user == current_user %>
+      <div id="nodogheader">
+        <h2> You Don't Have Any Dees Yet!! <h2>
+      </div>
   <% end %>
 
 
 
- </div>
+    </div>
+  </div>
 </div>
-
