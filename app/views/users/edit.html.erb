@@ -19,22 +19,19 @@
         <%= f.label :password_confirmation, "Confirm Password" %>
         <%= f.password_field :password_confirmation %>
     
-        <%= f.label :city %>
-        <%= f.text_field :city %>
+        <%= f.label :city_id %>
+        <%= f.collection_select :city_id, City.order(:id), :id, :name, include_blank: true %>
+
+        <%= f.label :burrough_id %>
+        <%= f.collection_select :burrough_id, Burrough.order(:id), :id, :name, include_blank: true %>
         
-        <%= f.label :neighborhood %>
-        <%= f.text_field :neighborhood %>
+        <%= f.label :hood_id %>
+        <%= f.collection_select :hood_id, Hood.order(:id), :id, :name, include_blank: true %>
         
         <%= f.label :image %>
          <%= f.file_field :image %>
-<!--         <%= f.file_field :avatar %>
- -->
-
         <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
       <% end %>
-
-      <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails">change</a>
      </div>
     </div>
   </div>

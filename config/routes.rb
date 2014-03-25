@@ -2,6 +2,10 @@ Whosthedee2::Application.routes.draw do
   resources :users
   resources :dogs  
   resources :sessions, only: [:new, :create, :destroy]
+  resources :friends, :controller => 'friendships', :except => [:show, :edit] do
+  get "requests", :on => :collection
+  get "invites", :on => :collection
+end
   root to: 'application#home'
   match "/dogs", to: 'dogs#index' ,via: 'get'
   match '/dogs/:id/edit', to: 'dogs#edit', via: 'get'
@@ -11,7 +15,8 @@ Whosthedee2::Application.routes.draw do
   match '/help', to: 'static_pages#help', via: 'get'  
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
-  match '/signup',  to: 'users#new', via: 'get'  
+  match '/signup',  to: 'users#new', via: 'get'
+    
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

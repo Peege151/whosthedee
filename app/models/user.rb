@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  include Amistad::FriendModel
+  belongs_to :burrough
+  belongs_to :city
+  belongs_to :hood
   has_many :dogs, dependent: :destroy
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50 }

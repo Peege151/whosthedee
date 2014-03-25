@@ -2,10 +2,12 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container2">
       <div id="logowrap">
-              <%= link_to image_tag("/images/doghouse.png"), root_path %>
+              <%= link_to image_tag("/images/doghouse.png"), root_path %>   
+      <% if signed_in? %>
+           <%= link_to image_tag('/images/addafriendlogo.png', :size => "50x50"), requests_friends_path(id: @user.id) %>
+      <% end %>
       </div>       
       <% if signed_in? %>
-
       <div id="searchcontainer">
         <div id="search">
         <%= form_tag("/users", method: "get") do %>

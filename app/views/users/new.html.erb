@@ -19,24 +19,17 @@
       <%= f.label :password_confirmation, "Confirm Password" %> <br>
       <%= f.password_field :password_confirmation %> <br>
         <div class="field">
-    <%= f.label :city %><br>
-    <%= f.select :city,
-          [
-          ['New York City', 'nyc'],
-          ['Los Angeles', 'la'],
-          ['Boston', 'bean']
-          ] 
-          %>
-</div>
+    <%= f.label :city_id %><br>
+    <%= f.collection_select :city_id, City.order(:id), :id, :name, include_blank: true %>
+        </div>
         <div id="neighbselect">
-        <%= f.label :neighborhood %><br>
-        <%= f.select :neighborhood,
-        [
-        ['Williamsburg', 'williamsburg'],
-        ['Park Slope', 'parkslope']  
-        ]
-         %>
-  </div>
+        <%= f.label :burrough_id %><br>
+        <%= f.grouped_collection_select :burrough_id, City.order(:name), :burroughs, :name, :id, :name, include_blank: true %>
+        </div>
+        <div id="neighbselect">
+        <%= f.label :hood_id %><br>
+        <%= f.grouped_collection_select :hood_id, Burrough.order(:name), :hoods, :name,  :id, :name, include_blank: true %>
+        </div>
 
       <%= f.file_field :image %>
 
