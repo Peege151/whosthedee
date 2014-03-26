@@ -16,6 +16,8 @@ gem "paperclip", "~> 4.1"
 
 group :development do
   gem 'sqlite3', '1.3.8'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 # Use SCSS for stylesheets
 group :assets do
