@@ -13,7 +13,9 @@
            <%= image_tag @user.image.url(:thumb) %> 
         </div>
             <%= link_to 'Edit', edit_user_path(@user) %> |
-          <h3> <%= @user.city.name %></h3> <br>
+            <% if @user.burrough != nil %>
+                <h3> <%= @user.city.name %></h3> <br>
+            <% end %>
             <% if @user.burrough != nil %>
                 <h3> <%= @user.burrough.name %></h3> <br>
             <% end %> 
