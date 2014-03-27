@@ -2,11 +2,16 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag "application", media: "all" %>
+        <%= stylesheet_link_tag "application", media: "all" %>
         <%= stylesheet_link_tag "owl.carousel" %>
-                <%= stylesheet_link_tag "owl.theme" %>
+        <%= stylesheet_link_tag "owl.theme" %>
+        <%= stylesheet_link_tag "easytabs" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "owl.carousel" %>
+    <%= javascript_include_tag "easytabs" %>
+
+
+
     <script>
         $(document).ready(function() {
         $("#slider").owlCarousel({ 

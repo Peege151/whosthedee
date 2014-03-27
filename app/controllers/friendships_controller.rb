@@ -43,9 +43,11 @@ include SessionsHelper
   def destroy
     user = User.find_by_id(params[:id])
     if current_user.remove_friendship user
-      redirect_to friends_path, :notice => "Successfully removed friend!"
+      flash[:success] = "Successfully Delcined Friend!"
+      redirect_to :back 
     else
-      redirect_to friends_path, :notice => "Sorry, couldn't remove friend!"
+      flash[:fail] = "Oops!"
+      redirect_to :back
     end
   end
 end

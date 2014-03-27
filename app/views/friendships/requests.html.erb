@@ -36,26 +36,123 @@
         </div>
       <% end %>
   </div>
-      <div id="friendrequests">
-    <!-- Not Formatted -->
-          <div id="friendheader">
-          <span>Friend Requests</span>
-          </div>
-          <div id="friendreqcontainer">
-            <% current_user.pending_invited_by.each do  |user|  %>
+
+   <div id="tab-container" class="tab-container">
+  <ul class='etabs'>
+    <li class='tab'><a href="#tabs1">Friends</a></li>
+    <li class='tab'><a href="#tabs2">Friends Request</a></li>
+    <li class='tab'><a href="#tabs3">Friends Pending</a></li>
+    <li class='tab'><a href="#tabs4">Blocked</a></li>
+
+  </ul>
+  <div id="tabs2">
+    <div class="friendheader">
+      <span> Friend Requests </span>
+    </div>
+    <!-- content -->
+        <% current_user.pending_invited_by.each do  |user|  %>
+          <div id="friendcontainer">
             <div id="friendreqimage">
-            <%= image_tag user.image.url(:thumb) %>
+               <%= image_tag user.image.url(:thumb) %>
             </div>
-            <div id="friendreqname">
-            <h2> <%= link_to user.name, user %> </h2> <span> Wants To Be Yo' BuDEE! </span> <br>
-                <div id="friendreq_buttons">
-                  <%= link_to "Accept Request", friend_path(user), :method=> "put" %>
-                </div>
+            <div id="nameandbuttonwrap">
+            <div id="friendname">
+               <%= link_to user.name, user %> 
             </div>
-           
+            <div id="wantstabe">
+      <span style= "display:inline;"> Wants To Be Yo' BuDEE! </span> 
+    </div>
+    <div id="friendoptions">
+                    <%= link_to "Accept Request", friend_path(user), :method=> "put" %> Or
+                    <%= link_to "Ehh...No", friend_path(user), :method=> "delete" %> 
           </div>
-          <br> <br>
+    </div>
+        </div>
         <% end %>
-      </div>
+  </div>
+  <div id="tabs3">
+    <div class="friendheader">
+          <span> Friends Pending </span>
+    </div>
+    <!-- content -->
+          <% current_user.pending_invited.each do  |user|  %>
+          <div id="friendcontainer">
+            <div id="friendreqimage">
+              <%= image_tag user.image.url(:thumb) %>
+            </div>
+            <div id="nameandbuttonwrap">
+            <div id="friendname">
+             <%= link_to user.name, user %> 
+            </div>
+            <div id="wantstabe">
+      <span style= "display:inline;"> Wants To Be Yo' BuDEE! </span> 
+    </div>
+    <div id="friendoptions">
+                    <%= link_to "Cancel Request", friend_path(user), :method=> "delete" %> 
+          </div>
+    </div>
+        </div>
+                <% end %>
+
+    <!-- content -->
+  </div>
+  <div id="tabs1">
+<div class="friendheader">
+          <span> Friends </span>
+    </div>
+    <!-- content -->
+          <% current_user.friends.each do  |user|  %>
+          <div id="friendcontainer">
+            <div id="friendreqimage">
+              <%= image_tag user.image.url(:thumb) %>
+            </div>
+            <div id="nameandbuttonwrap">
+            <div id="friendname">
+             <%= link_to user.name, user %> 
+            </div>
+            <div id="wantstabe">
+      <span style= "display:inline;"> Wants To Be Yo' BuDEE! </span> 
+    </div>
+    <div id="friendoptions">
+                    <%= link_to "Accept Request", friend_path(user), :method=> "put" %> Or
+                    <%= link_to "Ehh...No", friend_path(user), :method=> "delete" %> 
+          </div>
+    </div>
+        </div>
+                <% end %>    <!-- content -->
+  </div>
+    <div id="tabs4">  
+      <div class="friendheader">
+          <span> Blocked</span>
+    </div>
+    <!-- content -->
+          <% current_user.blocked.each do  |user|  %>
+          <div id="friendcontainer">
+            <div id="friendreqimage">
+              <%= image_tag user.image.url(:thumb) %>
+            </div>
+            <div id="nameandbuttonwrap">
+            <div id="friendname">
+             <%= link_to user.name, user %> 
+            </div>
+            <div id="wantstabe">
+      <span style= "display:inline;"> Wants To Be Yo' BuDEE! </span> 
+    </div>
+    <div id="friendoptions">
+                    <%= link_to "Accept Request", friend_path(user), :method=> "put" %> Or
+                    <%= link_to "Ehh...No", friend_path(user), :method=> "delete" %> 
+          </div>
+    </div>
+        </div>
+                <% end %> 
+    
+    </div>
+</div>
+  <script>
+    $('#tab-container').easytabs();
+  </script>
+        
+  
+
   </div>
 </div>

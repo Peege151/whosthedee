@@ -6,38 +6,58 @@
 		margin-bottom:0px;
 		font-size:250%;}
 }
-#friendreqcontainer {
-	height:150px;
-	width: 100%;
-}
-#friendreqimage {
-	height:150px;
-	width:150px;
-	float:left;
-	img {border:3px solid orange}
-}
-#friendreqname {
-	float:left;
-	height:150px;
-	width:80%;
-	margin-left:20px;
-	vertical-align: middle;
-	h2 {text-align: left;
-		width:200px;}
-	span {float:left; 
-		}
-}
-#friendheader {
-	height:50px;
-	width:250px;
+.friendheader {
+	height: 50px;
+	margin: 0 auto;
     font-family: "Moon_Flower";
     src: url('Moon_Flower_Bold.ttf');
-    font-size:350%;
-    overflow:visible;
+    font-size:300%;
+    vertical-align: top;
+    text-align: center;
+    z-index: -13;
+    background: whitesmoke;
     span {
-    position:relative;
-    top:10px;
-  }
+    	position:relative;
+    		bottom:30px;
+    }
+}
+#nameandbuttonwrap {
+	height:156px;
+	width:800px;
+	 position:relative;
+	 top:50px;
+}
+#friendcontainer {
+	height:156px;
+	width: 800px;
+	a {color:blue;}
+	background-color:whitesmoke;
+}
+#friendreqimage {
+	height:156px;
+	width:156px;
+	float:left;
+		margin-right:20px;
+
+	img {border:3px solid orange}
+}
+#friendname {
+	float:left;
+	height:150px;
+	width:150px;
+	margin-left:20px;
+	z-index:999;
+	display:inline;
+}
+#wantstabe {
+	height:156px;
+	width:200px;
+	float:left;
+}
+#friendoptions {
+	height:156px;
+	width:200px;
+	float:left;
 }
 #friendreq_buttons {
 	float:left;
