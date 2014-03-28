@@ -6,11 +6,11 @@ $grayMediumLight: #eaeaea;
 
 @font-face {
   font-family: "Moon_Flower";
-  src: url('Moon_Flower_Bold.ttf')
+  src: font-url('Moon_Flower_Bold.ttf')
   }
 html {
     height:100%;
-    background-image: url(<%= asset_path 'concretepawbg.JPG' %>);
+    background-image: url(<%= image_tag 'concretepawbg.JPG' %>);
     background-position: center;
     background-size:cover;
 }
@@ -90,7 +90,7 @@ ul.users {
     width:250px;
     height:50px;
     font-family: "Moon_Flower";
-    src: url('Moon_Flower_Bold.ttf');
+    src: font-url('Moon_Flower_Bold.ttf');
     font-size:350%;
     overflow:visible;
     span {
@@ -177,7 +177,7 @@ box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
   width:120px;
   vertical-align: middle;
       font-family: "Moon_Flower";
-    src: url('Moon_Flower_Bold.ttf');
+    src: font-url('Moon_Flower_Bold.ttf');
     font-size:300%;
     span {
       position:relative;top:30px;
