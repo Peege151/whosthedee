@@ -13,6 +13,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 # Use sqlite3 as the database for Active Record
 gem 'rspec-rails', '2.11.0'
 gem "paperclip", "~> 4.1"
+gem "seed_dump"
 
 group :development do
   gem 'sqlite3', '1.3.8'

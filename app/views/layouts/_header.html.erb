@@ -4,7 +4,7 @@
       <div id="logowrap">
               <%= link_to image_tag("/images/doghouse.png"), root_path %>   
       <% if signed_in? %>
-           <%= link_to image_tag('/images/addafriendlogo.png', :size => "50x50"), requests_friends_path(id: @user.id) %>
+           <%= link_to image_tag('/images/addafriendlogo.png', :size => "50x50"), requests_friends_path(id: @current_user.id) %>
       <% end %>
       </div>       
       <% if signed_in? %>
