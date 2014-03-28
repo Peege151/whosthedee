@@ -50,10 +50,6 @@ ActiveRecord::Schema.define(version: 20140324204544) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "dogpic_file_name"
-    t.string   "dogpic_content_type"
-    t.integer  "dogpic_file_size"
-    t.datetime "dogpic_updated_at"
   end
 
   create_table "friendships", force: true do |t|

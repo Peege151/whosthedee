@@ -10,9 +10,9 @@ City.create!([
   {name: "Boston"}
 ])
 Dog.create!([
-  {name: "Willie", nick: "Willie Dee", primarybreed: "Sheltie", secondarybreed: "Sheltie", neighborhood: "Brooklyn", age: 2, weight: 20, picture: nil, user_id: 108, image_file_name: "headerimage1.png", image_content_type: "image/png", image_file_size: 70526, image_updated_at: "2014-03-18 00:04:27", dogpic_file_name: nil, dogpic_content_type: nil, dogpic_file_size: nil, dogpic_updated_at: nil},
-  {name: "Willie Dee", nick: "The WildeBeast", primarybreed: "Shetland Sheepdog", secondarybreed: "Purebreed", neighborhood: "Williamsburg", age: 3, weight: 30, picture: nil, user_id: 102, image_file_name: "headerimage1.png", image_content_type: "image/png", image_file_size: 70526, image_updated_at: "2014-03-14 15:11:13", dogpic_file_name: nil, dogpic_content_type: nil, dogpic_file_size: nil, dogpic_updated_at: nil},
-  {name: "", nick: "", primarybreed: "", secondarybreed: "", neighborhood: "", age: 2, weight: 2, picture: nil, user_id: 107, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil, dogpic_file_name: "WhosTheDLogo.jpg", dogpic_content_type: "image/jpeg", dogpic_file_size: 219940, dogpic_updated_at: "2014-03-12 13:00:32"}
+  {name: "Willie", nick: "Willie Dee", primarybreed: "Sheltie", secondarybreed: "Sheltie", neighborhood: "Brooklyn", age: 2, weight: 20, picture: nil, user_id: 108, image_file_name: "headerimage1.png", image_content_type: "image/png", image_file_size: 70526, image_updated_at: "2014-03-18 00:04:27"},
+  {name: "Willie Dee", nick: "The WildeBeast", primarybreed: "Shetland Sheepdog", secondarybreed: "Purebreed", neighborhood: "Williamsburg", age: 3, weight: 30, picture: nil, user_id: 102, image_file_name: "headerimage1.png", image_content_type: "image/png", image_file_size: 70526, image_updated_at: "2014-03-14 15:11:13"},
+  {name: "", nick: "", primarybreed: "", secondarybreed: "", neighborhood: "", age: 2, weight: 2, picture: nil, user_id: 107, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil}
 ])
 Hood.create!([
   {name: "Williamsburg", burrough_id: 1, city_id: 1},
@@ -27,7 +27,6 @@ Hood.create!([
   {name: "Financial", burrough_id: nil, city_id: 2}
 ])
 User.create!([
-  {name: "Patrick Sullivan", email: "pjsulli2k@gmail.com", password_digest: "$2a$10$ZXeEjtJAoMpdOpe.3H7avOdO9XMCuAjwAkIm10DWtZ3Ip4vV/WW2.", remember_token: "8547c55df10c0d094d207278efa061b59fdf1cd3", admin: true, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil, city_id: nil, hood_id: nil, burrough_id: nil},
   {name: "Example User", email: "example2222@railstutorial.org", password_digest: "$2a$10$8x4Ga13e/6DcJ2c6O5hTw.OK9./97DVMvNyEBXSXUUcdvMyDVwwji", remember_token: nil, admin: false, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil, city_id: nil, hood_id: nil, burrough_id: nil},
   {name: "Ally Metz", email: "example-1@railstutorial.org", password_digest: "$2a$10$5GtF0Q0.FAtgdYFuBG4LgOoKpzp27l0StwJ38ZOMOzth1jkaUeVLK", remember_token: nil, admin: false, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil, city_id: nil, hood_id: nil, burrough_id: nil},
   {name: "Candace Schoen DDS", email: "example-2@railstutorial.org", password_digest: "$2a$10$/m35I5cpqqO46c1DTHhJae0i4cWmWK5jiG3fVbFNBUx52Y8fsbzQO", remember_token: nil, admin: false, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil, city_id: nil, hood_id: nil, burrough_id: nil},
