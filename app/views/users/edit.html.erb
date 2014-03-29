@@ -19,14 +19,8 @@
         <%= f.label :password_confirmation, "Confirm Password" %>
         <%= f.password_field :password_confirmation %>
     
-        <%= f.label :city_id %>
-        <%= f.collection_select :city_id, City.order(:id), :id, :name, include_blank: true %>
-
-        <%= f.label :burrough_id %>
-        <%= f.collection_select :burrough_id, Burrough.order(:id), :id, :name, include_blank: true %>
-        
-        <%= f.label :hood_id %>
-        <%= f.collection_select :hood_id, Hood.order(:id), :id, :name, include_blank: true %>
+        <%= f.label :zip_code %>
+        <%= f.text_field :zip_code %>
         
         <%= f.label :image %>
          <%= f.file_field :image %>

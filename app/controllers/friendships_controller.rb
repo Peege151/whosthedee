@@ -34,6 +34,8 @@ include SessionsHelper
   def requests
     @pending_requests = current_user.pending_invited_by
     @user = User.find(params[:id])
+    @userhood = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][2]["long_name"]
+    @userburrough = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][3]["long_name"]
   end
 
   def invites

@@ -12,39 +12,57 @@
            <%= image_tag @user.image.url(:thumb) %> 
         </div>
             <%= link_to 'Edit', edit_user_path(@user) %> |
-          <h3> <%= @user.city.name %></h3> <br>
+     
+
+
+
+
+
+     <!--        <% if @user.burrough != nil %>
+                <h3> <%= @user.city.name %></h3> <br>
+            <% end %>
             <% if @user.burrough != nil %>
                 <h3> <%= @user.burrough.name %></h3> <br>
             <% end %> 
             <% if @user.hood != nil %>
                 <h3> <%= @user.hood.name %></h3> <br>
-            <% end %>
+            <% end %> -->
 
          <!--  <h3> User Status: </h3>
           <div class="banneravatarcontainer">
              <%= gravatar_for @user %>
           </div>
         <div class="userstatus"> <span> Pup  </span> </div> -->
-            <strong>Email:</strong>
-            <h3> <%= @user.email %> </h3><br>
-            <%= link_to 'Back', root_path %>
-      <% if @user != current_user %>      
+<!--               <h3><%= @user.zip_code %><h3>
+ -->              <h3> <%= @userhood %>  </h3>
+                  <h3> <%= @userburrough %>  </h3>
+                  <% if @user != current_user %>      
+                  <h3> About <%= current_user.distance_from([@user.latitude,@user.longitude]).round(2)  %> <br> Miles Away From You</h3>
+                  <% end %>
+
+                 <h3> <%= @user.email %> </h3><br>
+              
+        <% if @user != current_user %>      
         <div class="userbuttons">
             <%= link_to 'Add Friend', friends_path(id: @user.id), :method =>"post", class: "btn btn-default btn-success" %>
             <a href="#" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-envelope"></span> Message User</a>
             <a href="#" class="btn btn-default btn-danger"><span class="glyphicon glyphicon-flag"></span> Report User</a>
         </div>
       <% end %>
+                  <%= link_to 'Back', root_path %>
+
   </div>
 
 <div id="tab-container" class="tab-container">
   <ul class='etabs'>
     <li class='tab'><a href="#tabs1">Friends</a></li>
-    <li class='tab'><a href="#tabs2">Friends Request</a></li>
-    <li class='tab'><a href="#tabs3">Friends Pending</a></li>
-    <li class='tab'><a href="#tabs4">Blocked</a></li>
-
+   <% if @user == current_user %>
+      <li class='tab'><a href="#tabs2">Friends Request</a></li>
+      <li class='tab'><a href="#tabs3">Friends Pending</a></li>
+      <li class='tab'><a href="#tabs4">Blocked</a></li>
+      <% end %>
   </ul>
+<% if @user == current_user %>
   <div id="tabs2">
     <div class="friendheader">
       <span> Friend Requests </span>
@@ -70,6 +88,9 @@
         </div>
       <% end %>
   </div>
+  <% end %>
+  <% if @user == current_user %>
+
   <div id="tabs3">
     <div class="friendheader">
           <span> Friends Pending </span>
@@ -93,12 +114,13 @@
                 </div>
           </div>
         <% end %>
-
     <!-- content -->
   </div>
+<% end %>
+
   <div id="tabs1">
           <div class="friendheader">
-              <span> Friends </span>
+              <span> <%= @user.name %>'s Friends </span>
           </div>
     <!-- content -->
               <% current_user.friends.each do  |user|  %>
@@ -120,6 +142,8 @@
                   </div>
                 <% end %>    <!-- content -->
   </div>
+  <% if @user == current_user %>
+
   <div id="tabs4">  
       <div class="friendheader">
           <span> Blocked</span>
@@ -145,6 +169,7 @@
             <% end %> 
     </div>
 </div>
+<% end %>
   <script>
     $('#tab-container').easytabs();
   </script>

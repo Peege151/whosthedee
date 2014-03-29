@@ -2,11 +2,10 @@ class UsersController < ApplicationController
     before_action :signed_in_user, only: [:edit, :update]
     before_action :correct_user,   only: [:edit, :update]
     before_action :admin_user,     only: :destroy
-
-
+require "Geocoder"
 def home
 end
-  
+
   def cities
     @cities = City.all
   end
@@ -28,9 +27,13 @@ end
   def show
     @user = User.find(params[:id])
     @dog = Dog.new
+    @userhood = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][2]["long_name"]
+    @userburrough = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][3]["long_name"]
+
   end
   def edit
   end
+
   def create
     @user = User.new(user_params)
     if @user.save
@@ -59,7 +62,7 @@ end
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :image, :city_id, :burrough_id, :hood_id)
+                                   :password_confirmation, :image, :city_id, :burrough_id, :hood_id, :zip_code, :latitude, :longitude)
     end
     # Before filters
      

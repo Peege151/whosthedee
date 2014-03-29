@@ -22,11 +22,12 @@ Hood.create!([
   {name: "Bushwick", burrough_id: 1, city_id: 1},
   {name: "Red Hook", burrough_id: 1, city_id: 1},
   {name: "Greenpoint", burrough_id: 1, city_id: 1},
-  {name: "Allston", burrough_id: nil, city_id: 2},
-  {name: "Southie", burrough_id: nil, city_id: 2},
-  {name: "Financial", burrough_id: nil, city_id: 2}
+  {name: "Allston", burrough_id: 6, city_id: 2},
+  {name: "Southie", burrough_id: 6, city_id: 2},
+  {name: "Financial", burrough_id: 6, city_id: 2}
 ])
 User.create!([
+    {name: "Patrick Sullivan", email: "Pjsulli234234232k@gmail.com", password_digest: "$2a$10$8x4Ga13e/6DcJ2c6O5hTw.OK9./97DVMvNyEBXSXUUcdvMyDVwwji", remember_token: nil, admin: false, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil, city_id: nil, hood_id: nil, burrough_id: nil},
   {name: "Example User", email: "example2222@railstutorial.org", password_digest: "$2a$10$8x4Ga13e/6DcJ2c6O5hTw.OK9./97DVMvNyEBXSXUUcdvMyDVwwji", remember_token: nil, admin: false, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil, city_id: nil, hood_id: nil, burrough_id: nil},
   {name: "Ally Metz", email: "example-1@railstutorial.org", password_digest: "$2a$10$5GtF0Q0.FAtgdYFuBG4LgOoKpzp27l0StwJ38ZOMOzth1jkaUeVLK", remember_token: nil, admin: false, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil, city_id: nil, hood_id: nil, burrough_id: nil},
   {name: "Candace Schoen DDS", email: "example-2@railstutorial.org", password_digest: "$2a$10$/m35I5cpqqO46c1DTHhJae0i4cWmWK5jiG3fVbFNBUx52Y8fsbzQO", remember_token: nil, admin: false, image_file_name: nil, image_content_type: nil, image_file_size: nil, image_updated_at: nil, city_id: nil, hood_id: nil, burrough_id: nil},
