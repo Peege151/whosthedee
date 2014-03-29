@@ -11,9 +11,7 @@ class DogsController < ApplicationController
   # GET /dogs/1.json
   def show
         @dog = Dog.find(params[:id])
-
   end
-
   # GET /dogs/new
   def new
     @dog = Dog.new

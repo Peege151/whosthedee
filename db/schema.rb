@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329174308) do
+ActiveRecord::Schema.define(version: 20140329215109) do
 
   create_table "burroughs", force: true do |t|
     t.string   "name"
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 20140329174308) do
     t.string   "burrough_id"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "zip_code"
+    t.string   "zip_code"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

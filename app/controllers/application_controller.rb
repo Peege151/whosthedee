@@ -6,4 +6,6 @@ class ApplicationController < ActionController::Base
   end
   def user_params
   end
+    @randee = Dog.all.order("RANDOM()").limit(1)[0].image.url
+
 end
