@@ -14,11 +14,13 @@ gem 'geocoder'
 gem 'rspec-rails', '2.11.0'
 gem "paperclip", "~> 4.1"
 gem "seed_dump"
+gem "sunspot_rails"
 
 group :development do
   gem 'sqlite3', '1.3.8'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'sunspot_solr'
 end
 # Use SCSS for stylesheets
 group :assets do
