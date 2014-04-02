@@ -2,12 +2,12 @@ Whosthedee2::Application.routes.draw do
   resources :users
   resources :dogs  
   resources :sessions, only: [:new, :create, :destroy]
+  resources :search, only: [:index]
   resources :friends, :controller => 'friendships', :except => [:show, :edit] do
   get "requests", :on => :collection
   get "invites", :on => :collection
 end
-  root to: 'application#home'
-  match "/dogs", to: 'dogs#index' ,via: 'get'
+  root to: 'dogs#index'
   match '/dogs/:id/edit', to: 'dogs#edit', via: 'get'
   get "users/new"
   match '/signin',  to: 'sessions#new',         via: 'get'

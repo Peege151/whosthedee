@@ -4,13 +4,22 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   def index
-    @dogs = Dog.all
+    if current_user
+      @user = current_user
+      @breed = @user.dogs.first.primarybreed
+      # params[:search] = @breed
+      @dog = Dog.search(params[:search]).sample if params[:search].present?
+
+
+          #so
+      #@dog = Dog.search(params[:search]) if params[:search].present?
+    end
   end
 
   # GET /dogs/1
   # GET /dogs/1.json
   def show
-        @dog = Dog.find(params[:id])
+      @dog = Dog.find(params[:id])
   end
   # GET /dogs/new
   def new

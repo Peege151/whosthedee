@@ -26,7 +26,9 @@ class User < ActiveRecord::Base
 
   geocoded_by :zip_code   # can also be an IP address
   after_validation :geocode 
-
+  searchable do
+    string :name
+  end
 
 
   def User.new_remember_token

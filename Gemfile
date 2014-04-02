@@ -13,7 +13,7 @@ gem 'geocoder'
 # Use sqlite3 as the database for Active Record
 gem 'rspec-rails', '2.11.0'
 gem "paperclip", "~> 4.1"
-gem "seed_dump"
+gem "seed_dump" 
 gem "sunspot_rails"
 
 group :development do
@@ -21,6 +21,8 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'sunspot_solr'
+  gem 'pry-rails'
+  gem 'pry-stack_explorer'
 end
 # Use SCSS for stylesheets
 group :assets do

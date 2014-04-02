@@ -1,44 +1,70 @@
-<div id="dogswrap">
 
-<h1>Listing dogs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Nick</th>
-      <th>Primarybreed</th>
-      <th>Secondarybreed</th>
-      <th>Neighborhood</th>
-      <th>Age</th>
-      <th>Weight</th>
-      <th>Picture</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dogs.each do |dog| %>
-      <tr>
-        <td><%= dog.name %></td>
-        <td><%= dog.nick %></td>
-        <td><%= dog.primarybreed %></td>
-        <td><%= dog.secondarybreed %></td>
-        <td><%= dog.neighborhood %></td>
-        <td><%= dog.age %></td>
-        <td><%= dog.weight %></td>
-        <td><%= dog.image %></td>
-        <td><%= link_to 'Show', dog %></td>
-        <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-        <td><%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Dog', new_dog_path %>
+<%= render 'layouts/slider' %>
+<div id="pagewrap">
+<% if signed_in? == false %>
+<div class="homestatic">
+  <div class="homeline">
+      <h1 style="position:relative;top:20px;">Welcome To</h1>
+  </div>
+    <div class="logoline">
+      <img src="/images/Whosthedeecompact.png" />
+    </div>
+    <div class="slogan">
+      <h2 style="color:black;">
+        The Place On The Internet For Dogs and Their Owners!
+      </h2>
+    </div>
+    <div id="signupbutton">
+      <%= link_to "Sign Up!", signup_path, class: "btn btn-large btn-primary" %> 
+    </div>
+  <!-- <%= image_tag("/images/happydog2.png") %> -->
+    <span> <%= image_tag("/images/happydog.png") %> </span>
+  <!-- <%= image_tag("/images/happydog2.png") %> -->
 </div>
+<% else %>
+<div class="usershowwrap">
+<div class="userbanner">
+  <div id = "namecontainer">
+       <span> <%= @user.name %> </span>
+  </div>
+        <div class="bannerimagecontainer">
+           <%= image_tag @user.image.url(:thumb) %> 
+        </div>
+            <%= link_to 'Edit', edit_user_path(@user) %> |
+            <% if @user.city != nil %>
+                <h3> <%= @user.city.name %></h3> <br>
+                <h3> <%= @user.burrough.name %></h3> <br>
+                <h3> <%= @user.hood.name %></h3> <br>
+            <% end %>
+         <!--  <h3> User Status: </h3>
+          <div class="banneravatarcontainer">
+             <%= gravatar_for @user %>
+          </div>
+        <div class="userstatus"> <span> Pup  </span> </div> -->
+            <strong>Email:</strong>
+            <h3> <%= @user.email %> </h3><br>
+            <%= link_to 'Back', root_path %>
+      <% if @user != current_user %>      
+        <div class="userbuttons">
+            <%= link_to 'Add Friend', friends_path(id: @user.id), :method =>"post", class: "btn btn-default btn-success" %>
+            <a href="#" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-envelope"></span> Message User</a>
+            <a href="#" class="btn btn-default btn-danger"><span class="glyphicon glyphicon-flag"></span> Report User</a>
+        </div>
+      <% end %>
+  </div>
+<% if current_user.dogs.count > 0 %>
+  <% if @dog == nil %>
+      <div id="dogsearchform">
+        <%= render 'dogs/form' %>
+      </div> 
+  <% end %>
+    <% if @dog %>
+      <%= render 'dogs/dogmatch' %>
+    <% end %>
+<% end %>
+<% end%>
+</div>
+
+</div>
+

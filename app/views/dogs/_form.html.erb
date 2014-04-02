@@ -1,0 +1,4 @@
+  <%= form_tag dogs_path, :method => :get do %>
+    <%= hidden_field_tag :search, @breed %>
+    <%= image_submit_tag("/images/greenadd.png", size: "10x10", :name => nil) %> <!-- New Doggy Playdate! -->
+  <% end %> 

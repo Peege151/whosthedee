@@ -33,14 +33,9 @@
             <%= link_to 'Edit', edit_user_path(@user) %> |
             <% if @user.city != nil %>
                 <h3> <%= @user.city.name %></h3> <br>
-            <% end %>
-            <% if @user.burrough != nil %>
                 <h3> <%= @user.burrough.name %></h3> <br>
-            <% end %> 
-            <% if @user.hood != nil %>
                 <h3> <%= @user.hood.name %></h3> <br>
             <% end %>
-
          <!--  <h3> User Status: </h3>
           <div class="banneravatarcontainer">
              <%= gravatar_for @user %>
@@ -57,10 +52,18 @@
         </div>
       <% end %>
   </div>
-
+<% if current_user.dogs.count > 0 %>
 <div id="matches">
-  <h1> <%= image_tag("/images/greenadd.png")%>New Doggy Playdate!</h1>
+  
+    <%= form_tag dogs_path, :method => :get do %>
+        <%= text_field_tag :search, @breed %>
+        <%= submit, "Submit" %>
+        <%#= image_submit_tag("/images/greenadd.png", width:20) %> New Doggy Playdate!
+    <% end %>
+
+
 </div>
+<% end %>
 <% end%>
 </div>
 </div>

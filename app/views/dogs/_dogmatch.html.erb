@@ -1,0 +1,21 @@
+<div id="matches">
+        <div class="namepicwrap">
+          <div class="name"><%= current_user.dogs[0].name %> </div><br>
+          <div class="image300"><%= image_tag current_user.dogs[0].image.url(:medium) %></td> </div><br>
+          <div class="image150l"><%= image_tag current_user.image.url(:thumb) %></div>
+        </div>
+        <div id="shouldplaywith">
+            <h1> Should Play With...</h1>
+        </div>
+        <div class="namepicwrap">
+          <div class="name"><%= @dog.name %> </div><br>
+          <div class="image300"><%= image_tag @dog.image.url(:medium) %></td> </div><br>
+          <div class="image150r"><%= image_tag @dog.user.image.url(:thumb) %> </div>
+        </div>
+			<br>
+       <div id="matchbox">  
+          <div id="matchboxinner">
+            <p> Would You Like </p>
+          </div>
+        </div>
+</div>
