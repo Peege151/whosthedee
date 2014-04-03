@@ -4,18 +4,35 @@
           <div class="image300"><%= image_tag current_user.dogs[0].image.url(:medium) %></td> </div><br>
           <div class="image150l"><%= image_tag current_user.image.url(:thumb) %></div>
         </div>
-        <div id="shouldplaywith">
-            <h1> Should Play With...</h1>
+        <div id="matchcenter">
+        	<div class="matchsquare200">
+        	</div>
+            <h1 style="text-align:center;"> Should Play With...</h1>
+            <div class="matchsquare100">
+        	</div>
+                <div id="matchdistance">
+        		- - <%= current_user.distance_from([@dog.user.latitude,@dog.user.longitude]).round(2)  %> m - - >
         </div>
+        </div> 
+
         <div class="namepicwrap">
           <div class="name"><%= @dog.name %> </div><br>
-          <div class="image300"><%= image_tag @dog.image.url(:medium) %></td> </div><br>
-          <div class="image150r"><%= image_tag @dog.user.image.url(:thumb) %> </div>
+          <div class="image300"> <%=  link_to image_tag("#{@dog.image.url(:medium)}"), @dog %></td> </div><br>
+          <div class="image150r"><%= link_to image_tag("#{@dog.user.image.url(:thumb)}"), @dog.user %> </div>
         </div>
 			<br>
        <div id="matchbox">  
           <div id="matchboxinner">
-            <p> Would You Like </p>
+            <p> Would You Like To Get The Dogs Together?</p>
+            <div id="matchboxbuttoncontainer">
+            	<div class="matchboxbuttonl">
+	            <%= link_to 'Yes!!!', friends_path(id: @user.id), :method =>"post", class: "btn btn-default btn-success" %>
+	            </div>
+	            <div class="matchboxbuttonr">
+	            <%= link_to '...Nah', friends_path(id: @user.id), :method =>"post", class: "btn btn-default btn-danger" %>
+	        	</div>
+        	</div>
+        	<p> User Will Be Notified If Yes Is Selected! </p>
           </div>
         </div>
 </div>

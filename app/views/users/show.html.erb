@@ -12,23 +12,7 @@
            <%= image_tag @user.image.url(:thumb) %> 
         </div>
             <%= link_to 'Edit', edit_user_path(@user) %> |
-     <!--        <% if @user.burrough != nil %>
-                <h3> <%= @user.city.name %></h3> <br>
-            <% end %>
-            <% if @user.burrough != nil %>
-                <h3> <%= @user.burrough.name %></h3> <br>
-            <% end %> 
-            <% if @user.hood != nil %>
-                <h3> <%= @user.hood.name %></h3> <br>
-            <% end %> -->
-
-         <!--  <h3> User Status: </h3>
-          <div class="banneravatarcontainer">
-             <%= gravatar_for @user %>
-          </div>
-        <div class="userstatus"> <span> Pup  </span> </div> -->
-<!--               <h3><%= @user.zip_code %><h3>
- -->              <h3> <%= @userhood %>,  </h3>
+             <h3> <%= @userhood %>,  </h3>
                   <h3> <%= @userburrough %>  </h3>
                   <% if @user != current_user %>      
                   <h3> About <%= current_user.distance_from([@user.latitude,@user.longitude]).round(2)  %> <br> Miles Away From You</h3>

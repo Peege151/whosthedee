@@ -74,32 +74,58 @@
 	text-align: left;
 	position:relative;bottom:8px;
 }
-#shouldplaywith {
+.matchsquare200 {height:200px;
+width:308px;}
+.matchsquare100 {height:100px;
+width:308px;}
+#matchcenter {
 	float:left;
 	margin-left: 20px;
 	margin-right: 20px;
-	position:relative;top:180px;
-	height:306px;
+	height:106px;
 	width:308px;
+	display:table-cell;
+	vertical-align: middle;
 }
+#matchdistance {
+text-align:center;
+  		font-size:300%;
+  			    font-family: "Moon_Flower";
+    src: font-url('Moon_Flower_Bold.ttf');}
 #matchbox {
 	float:left;
 	height:200px;
 	width:960px;
 	margin:0 auto;
-
 }
 #matchboxinner {
 	height:200px;
 	width:500px;
 	margin:0 auto;
 	border-radius: 5px;
-	background-color: whitesmoke;
-	-webkit-box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
-  	-moz-box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
-  	box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
-  	p {
+	// background-color: whitesmoke;
+	// -webkit-box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
+ //  	-moz-box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
+ //  	box-shadow: -13px 10px 33px 5px rgba(0,0,0,0.5);
+  	p { text-align:center;
+  		font-size:300%;
   			    font-family: "Moon_Flower";
     src: font-url('Moon_Flower_Bold.ttf');
   	}
+}
+#matchboxbuttoncontainer {
+width:210px;
+height:70px;
+margin:0 auto
+}
+.matchboxbuttonl {
+	a {height: 50px;
+		width: 100px;}
+		float:left;
+}
+.matchboxbuttonr {
+	a {height: 50px;
+		width: 100px;
+		float:right;}
+	display:inline;
 }

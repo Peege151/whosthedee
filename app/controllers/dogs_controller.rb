@@ -5,13 +5,14 @@ class DogsController < ApplicationController
   # GET /dogs.json
   def index
     if current_user
-      @user = current_user
+      @user = current_user  
       @breed = @user.dogs.first.primarybreed
       # params[:search] = @breed
-      @dog = Dog.search(params[:search]).sample if params[:search].present?
+      @dog = Dog.search(params[:search],current_user.id).sample if params[:search].present?
+      @userburrough = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][3]["long_name"]
+      @userhood = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][2]["long_name"]
 
-
-          #so
+        #so
       #@dog = Dog.search(params[:search]) if params[:search].present?
     end
   end
@@ -19,7 +20,7 @@ class DogsController < ApplicationController
   # GET /dogs/1
   # GET /dogs/1.json
   def show
-      @dog = Dog.find(params[:id])
+        @dog = Dog.find(params[:id])
   end
   # GET /dogs/new
   def new
