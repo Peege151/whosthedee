@@ -10,8 +10,8 @@ Password123
 TO DO:
 
 
--- Seed the database with users and dogs
--- generate random images plucked from dog table for slider
+-- Seed the database with users and dogs <br>
+-- generate random images plucked from dog table for slider <br >
 -- encorporate messaging
 
 
