@@ -1,3 +1,3 @@
 Geocoder.configure(
-:lookup => :yandex
+:lookup => :google
 )

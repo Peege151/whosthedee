@@ -9,8 +9,8 @@ class DogsController < ApplicationController
       @breed = @user.dogs.first.primarybreed
       # params[:search] = @breed
       @dog = Dog.search(params[:search],current_user.id).sample if params[:search].present?
-      @userburrough = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][3]["long_name"]
-      @userhood = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][2]["long_name"]
+      # @userburrough = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][3]["long_name"]
+      # @userhood = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][2]["long_name"]
 
         #so
       #@dog = Dog.search(params[:search]) if params[:search].present?
