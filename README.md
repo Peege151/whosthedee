@@ -1,28 +1,18 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+For App Academy, and interested viewers...
 
-Things you may want to cover:
+Login with:
 
-* Ruby version
+Test123@gmail.com 
+Password123
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+TO DO:
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+-- Seed the database with users and dogs
+-- generate random images plucked from dog table for slider
+-- encorporate messaging
+
+
+
