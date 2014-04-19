@@ -14,13 +14,11 @@ gem 'geocoder', '~> 1.1.9'
 gem 'rspec-rails', '2.11.0'
 gem "paperclip", "~> 4.1"
 gem "seed_dump" 
-gem "sunspot_rails"
 
 group :development do
   gem 'sqlite3', '1.3.8'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'sunspot_solr'
   gem 'pry-rails'
   gem 'pry-stack_explorer'
 end
@@ -56,7 +54,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 group :production do
-  gem 'pg', '0.15.1'
+  gem 'pg'
   gem 'rails_12factor'
 end
 
