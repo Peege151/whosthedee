@@ -236,7 +236,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   faker (= 1.1.2)
-  geocoder
+  geocoder (~> 1.1.9)
   jbuilder (~> 1.2)
   jquery-rails
   mailboxer
