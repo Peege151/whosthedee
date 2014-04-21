@@ -28,7 +28,6 @@ end
     @dog = Dog.new
     @userhood = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][2]["long_name"]
     @userburrough = Geocoder.search("#{@user.latitude}, #{@user.longitude}")[0].data["address_components"][3]["long_name"]
-
   end
   def edit
   end
