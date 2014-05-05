@@ -19,8 +19,8 @@ group :development do
   gem 'sqlite3', '1.3.8'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'pry-rails'
-  gem 'pry-stack_explorer'
+   gem 'pry-rails'
+   gem 'pry-stack_explorer'
 end
 # Use SCSS for stylesheets
 group :assets do
