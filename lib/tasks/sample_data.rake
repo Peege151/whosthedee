@@ -1,6 +1,6 @@
 namespace :db do
   desc "Fill database with sample data"
-  users_to_create = 1
+  users_to_create = 50
   dogs_to_create = users_to_create * 10
   breed_array_size = 177 #0 indexed
   array_zips = ["11211", "11215", "01776"]
@@ -23,7 +23,12 @@ namespace :db do
                    zip_code: zip_code2, 
                    password_confirmation: password)
     end
-                      
+       Dog.create!( user_id: 1,
+                    name: "Willie",
+                    nick: "Dee",
+                    age: 4,
+                    primarybreed: "shetland_sheepdog",
+                    secondarybreed: "Purebred")               
 
     dogs_to_create.times do |d|
     primary_breed = 
@@ -206,7 +211,7 @@ namespace :db do
 ['wirehaired_pointing_griffon'],
 ['xoloitzcuintli'],
 ['yorkshire_terrier']
-      user_id = 1
+      user_id = rand(1..users_to_create)
       name = Faker::Name.name
       nick = Faker::Name.name[0..2]
       if d < breed_array_size

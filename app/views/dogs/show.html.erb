@@ -1,5 +1,41 @@
 <p id="notice"><%= notice %></p>
-<p>
+<div id="pagewrap">
+    <div id="break">
+    </div>
+  <div class="userbanner">
+    <div id = "namecontainer">
+         <span> <%= @user.name %> </span>
+    </div>
+        <div class="bannerimagecontainer">
+           <%= image_tag @user.image.url(:thumb) %> 
+        </div>
+            <%= link_to 'Edit', edit_user_path(@user) %> |
+             <h3> <%= @userhood %>,  </h3>
+                  <h3> <%= @userburrough %>  </h3>
+                  <% if @user != current_user %>      
+                  <h3> About <%= current_user.distance_from([@user.latitude,@user.longitude]).round(2)  %> <br> Miles Away From You</h3>
+                  <% end %>
+
+                 <h3> <%= @user.email %> </h3><br>
+                 <% if @user != current_user %>
+                 <%= link_to "View #{@user.name}'s Friends", requests_friends_path(id: @user.id)%><br>
+                 <% end %>
+        <% if @user != current_user %>      
+        <div class="userbuttons">
+            <%= link_to 'Add Friend', friends_path(id: @user.id), :method =>"post", class: "btn btn-default btn-success" %>
+            <a href="#" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-envelope"></span> Message User</a>
+            <a href="#" class="btn btn-default btn-danger"><span class="glyphicon glyphicon-flag"></span> Report User</a>
+        </div>
+      <% end %>
+                  <%= link_to 'Back', root_path %>
+
+  </div>
+
+  <div id="centerdogshow" class="span 9" >
+    <div id="deeshowimage">
+      <%= image_tag @dog.image.url(:medium)%>
+    </div>
+    <p>
   <strong>Owner:</strong>
   <%= @dog.user.name %>
 </p>
@@ -46,3 +82,9 @@
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
 <%= link_to 'Back', dogs_path %>
+
+  </div>
+</div>
+
+
+
